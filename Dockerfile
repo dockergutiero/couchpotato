@@ -1,5 +1,5 @@
-FROM phusion/baseimage:0.9.15
-MAINTAINER needo <needo@superhero.org>
+FROM armbuild/phusion-baseimage
+MAINTAINER Octavio Gutierrez <docker.gutiero@gmail.com>
 
 #########################################
 ##        ENVIRONMENTAL CONFIG         ##
@@ -22,8 +22,15 @@ CMD ["/sbin/my_init"]
 # Add services to runit
 ADD couchpotato.sh /etc/service/couchpotato/run
 ADD edge.sh /etc/my_init.d/edge.sh
+ADD sources.list /etc/apt/sources.list
 
 RUN chmod +x /etc/service/*/run /etc/my_init.d/*
+
+#########################################
+##       COPY PRECOMPILED UNRAR        ##
+#########################################
+
+ADD unrar /usr/bin/unrar
 
 #########################################
 ##         EXPORTS AND VOLUMES         ##
