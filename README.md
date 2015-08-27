@@ -1,4 +1,8 @@
-This is a Dockerfile setup for couchpotato - https://couchpota.to/
+This is a Dockerfile setup for couchpotato ported for ARM boards - https://couchpota.to/  
+
+This build has been tested successfully on Raspberry Pi 2 Model B
+
+In progress of testing other ARM board platforms and will list them below once verified
 
 By default this Docker installs the latest stable version of CouchPotato:
 
